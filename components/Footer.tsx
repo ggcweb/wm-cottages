@@ -2,7 +2,7 @@ export default function Footer() {
     return (
         <footer className="bg-gradient-to-br from-forest-green-dark via-forest-green to-forest-green-light text-white">
             <div className="container mx-auto px-6 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Contact Information */}
                     <div>
                         <h3 className="text-xl font-display font-bold mb-4">Contact Us</h3>
@@ -86,7 +86,7 @@ export default function Footer() {
                     </div>
 
                     {/* Social Media */}
-                    <div>
+                    {/* <div>
                         <h3 className="text-xl font-display font-bold mb-4">Follow Us</h3>
                         <div className="flex space-x-4">
                             <a
@@ -123,7 +123,7 @@ export default function Footer() {
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Copyright */}

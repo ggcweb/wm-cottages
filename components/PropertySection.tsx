@@ -51,6 +51,8 @@ export default function PropertySection({
                                 fill
                                 className="object-cover transition-opacity duration-500"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
+                                quality={85}
+                                priority={!reverse}
                             />
                         </div>
 
@@ -106,8 +108,8 @@ export default function PropertySection({
                                         key={index}
                                         onClick={() => setCurrentImageIndex(index)}
                                         className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentImageIndex
-                                                ? 'bg-white w-8'
-                                                : 'bg-white/50 hover:bg-white/75'
+                                            ? 'bg-white w-8'
+                                            : 'bg-white/50 hover:bg-white/75'
                                             }`}
                                         aria-label={`Go to image ${index + 1}`}
                                     />

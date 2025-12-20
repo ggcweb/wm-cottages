@@ -6,12 +6,12 @@ export default function Hero() {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/hero-cottage.jpg"
+                    src="/booking-images/cottage-01.jpg"
                     alt="White Mountain Cottages scenic view"
                     fill
                     className="object-cover"
                     priority
-                    quality={90}
+                    quality={85}
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />

@@ -128,6 +128,12 @@ export default function AttractionsSection() {
                     description: 'Wood-fired pizza and local ingredients',
                     url: 'https://www.flatbreadcompany.com',
                 },
+
+                {
+                    name: "Zeb's General Store",
+                    description: 'Zeb’s General Store embodies the nostalgia and quality offered by the general stores of yesteryear with a decidedly whimsical flair.',
+                    url: 'https://www.zebs.com',
+                },
             ],
         },
     ];
