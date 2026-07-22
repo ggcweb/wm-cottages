@@ -206,7 +206,7 @@ export default function Header() {
                                         Check-in
                                     </p>
                                     <p className="mt-1 text-xl font-semibold text-gray-900">
-                                        3:00 PM
+                                        4:00 PM
                                     </p>
                                 </div>
                                 <div className="bg-earth-cream/60 rounded-xl p-4 text-center">
@@ -228,6 +228,14 @@ export default function Header() {
                                         21 years of age
                                     </span>{' '}
                                     to make a reservation and to check in.
+                                </p>
+                            </div>
+
+                            {/* No smoking */}
+                            <div className="flex items-start space-x-3">
+                                <span className="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-cottage-red" />
+                                <p className="text-gray-700">
+                                    No smoking is allowed inside the cottages.
                                 </p>
                             </div>
                         </div>
