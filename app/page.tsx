@@ -7,9 +7,7 @@ import Gallery from '@/components/Gallery';
 import AreaGuide from '@/components/AreaGuide';
 import Policies from '@/components/Policies';
 import BookingCta from '@/components/BookingCta';
-import { stays } from '@/lib/site';
-
-const [cabins, house] = stays;
+import { cabins } from '@/lib/site';
 
 export default function Home() {
     return (
@@ -17,8 +15,7 @@ export default function Home() {
             <Hero />
             <Highlights />
             <LocationSection />
-            <StaySection stay={cabins} />
-            <StaySection stay={house} reverse tone="warm" />
+            <StaySection stay={cabins} tone="warm" />
             <SelfCheckIn />
             <Gallery />
             <AreaGuide />

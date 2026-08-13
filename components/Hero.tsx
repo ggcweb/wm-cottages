@@ -71,7 +71,12 @@ export default function Hero() {
             {/* Facts rail */}
             <div className="relative z-10 border-t border-white/15 bg-white/[0.07] backdrop-blur-md">
                 <div className="container">
-                    <dl className="grid grid-cols-4 divide-x divide-white/15">
+                    <dl
+                        className="grid divide-x divide-white/15"
+                        style={{
+                            gridTemplateColumns: `repeat(${hero.stats.length}, minmax(0, 1fr))`,
+                        }}
+                    >
                         {hero.stats.map((stat) => (
                             <div key={stat.label} className="px-2 py-5 text-center sm:px-4 md:py-6">
                                 <dt className="sr-only">{stat.label}</dt>

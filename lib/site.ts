@@ -1,12 +1,15 @@
 /**
  * Single source of truth for everything the site says.
  *
- * Contact details, the House, the policies and the area guide are carried over
- * unchanged from the previous site. The cabin counts were corrected by the
- * owner: ten cabins, three of them two-bedroom and the remaining seven single
- * room, each with a kitchenette and a private bathroom. The old "1 queen / 5
- * king" split is deliberately gone — bed types are unconfirmed, so the site
- * says nothing about them rather than guessing.
+ * Contact details, the policies and the area guide are carried over unchanged
+ * from the previous site. Two owner corrections since:
+ *
+ *   - Ten cabins, not six. Three are two-bedroom, the remaining seven single
+ *     room, and every one has a kitchenette and a private bathroom. The old
+ *     "1 queen / 5 king" split is deliberately gone — bed types are
+ *     unconfirmed, so the site says nothing about them rather than guessing.
+ *   - The House is not for rent at the moment and is no longer rendered. See
+ *     the `house` export below for how to bring it back.
  *
  * Edit copy here rather than in the components.
  */
@@ -32,7 +35,6 @@ export const contact = {
 
 export const nav = [
     { label: 'The Cabins', href: '#cabins' },
-    { label: 'The House', href: '#house' },
     { label: 'Self Check-In', href: '#check-in' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'The Area', href: '#area' },
@@ -43,7 +45,7 @@ export const hero = {
     eyebrow: 'North Conway, New Hampshire',
     title: 'Stay in the heart of',
     titleAccent: 'North Conway',
-    lede: 'Experience the beauty of the White Mountains in our charming cabins and spacious family house.',
+    lede: 'Experience the beauty of the White Mountains in our charming cabins, right on the main street through the village.',
     image: {
         src: '/booking-images/cottage-06.jpg',
         alt: 'Two of the red cabins side by side, each with its own covered porch',
@@ -51,7 +53,6 @@ export const hero = {
     stats: [
         { value: 'Self', label: 'Check-In' },
         { value: '10', label: 'Cabins' },
-        { value: '9', label: 'Bedroom House' },
         { value: '4PM', label: 'Arrival' },
     ],
 };
@@ -74,7 +75,7 @@ export const highlights = [
     },
     {
         title: 'Room for everyone',
-        body: 'Ten cabins — three with two bedrooms, the rest a single room — plus a nine-bedroom house when the whole group comes along.',
+        body: 'Ten cabins in all — three with two bedrooms, the rest a single room. Enough for a couple, a family, or a group booking several at once.',
         icon: 'group' as const,
     },
 ];
@@ -137,97 +138,106 @@ export interface Stay {
     facts: Array<{ value: string; label: string }>;
 }
 
-export const stays: Stay[] = [
-    {
-        id: 'cabins',
-        eyebrow: 'The cabins',
-        title: 'The Cabins',
-        subtitle: 'Cozy & Comfortable',
-        description: [
-            'We offer ten charming cabins, each with a kitchenette and a private bathroom. Three of them have two bedrooms, and the rest are comfortable single-room cabins. These cozy retreats are perfect for couples or small families seeking comfort and privacy.',
-            'Every cabin is thoughtfully designed with modern amenities while maintaining rustic mountain charm. Perfect for your White Mountains escape!',
-        ],
-        images: [
-            {
-                src: '/booking-images/cottage-21.jpg',
-                alt: 'Cabin two in red clapboard with a white porch and hostas in bloom',
-            },
-            {
-                src: '/booking-images/cottage-07.jpg',
-                alt: 'Bed beside a gas stove in a pine-panelled cabin',
-            },
-            {
-                src: '/booking-images/cottage-14.jpg',
-                alt: 'Cabin kitchenette with a microwave, sink and coffee maker',
-            },
-            {
-                src: '/booking-images/cottage-16.jpg',
-                alt: 'Screened porch with a dining table for four',
-            },
-        ],
-        amenities: [
-            '10 Cabins in All',
-            'Kitchenette',
-            '3 Two Bedroom Cabins',
-            'Private Bathroom',
-            '7 One Room Cabins',
-            'Private Entrance',
-            'Free WiFi',
-            'Cable TV',
-            'Heating',
-        ],
-        facts: [
-            { value: '10', label: 'Cabins' },
-            { value: '3', label: 'Two bedroom' },
-            { value: '7', label: 'One room' },
-        ],
-    },
-    {
-        id: 'house',
-        eyebrow: 'The house',
-        title: 'The House',
-        subtitle: 'Perfect for Large Groups & Families',
-        description: [
-            'Nestled in the White Mountains and closest to North Conway Village, our spacious family home is perfect for families and groups of all sizes. With 9 bedrooms and 5 bathrooms spread across three floors, everyone will have plenty of space to relax.',
-            'The ground floor features a full kitchen and two bedrooms with one bathroom. The second floor offers five bedrooms with three bathrooms, while the third floor has two bedrooms with one bathroom. Perfect for your White Mountains getaway!',
-        ],
-        images: [
-            {
-                src: '/booking-images/cottage-19.jpg',
-                alt: 'King bed with a writing desk and framed mirror',
-            },
-            {
-                src: '/booking-images/cottage-10.jpg',
-                alt: 'Sitting area with hardwood floors, a TV and a gas stove',
-            },
-            {
-                src: '/booking-images/cottage-18.jpg',
-                alt: 'Bedroom with a coffee maker, flat-screen TV and gas stove',
-            },
-            {
-                src: '/booking-images/cottage-13.jpg',
-                alt: 'Screened porch dining table looking out across the cabins',
-            },
-        ],
-        amenities: [
-            'Ground Floor: 2 Bedrooms, 1 Bathroom',
-            'Second Floor: 5 Bedrooms, 3 Bathrooms',
-            'Third Floor: 2 Bedrooms, 1 Bathroom',
-            'Full Kitchen',
-            'Multiple Living Areas',
-            'Mountain Views',
-            'Free WiFi',
-            'Cable TV',
-            'Heating',
-            'Ample Parking',
-        ],
-        facts: [
-            { value: '9', label: 'Bedrooms' },
-            { value: '5', label: 'Bathrooms' },
-            { value: '3', label: 'Floors' },
-        ],
-    },
-];
+export const cabins: Stay = {
+    id: 'cabins',
+    eyebrow: 'The cabins',
+    title: 'The Cabins',
+    subtitle: 'Cozy & Comfortable',
+    description: [
+        'We offer ten charming cabins, each with a kitchenette and a private bathroom. Three of them have two bedrooms, and the rest are comfortable single-room cabins. These cozy retreats are perfect for couples or small families seeking comfort and privacy.',
+        'Every cabin is thoughtfully designed with modern amenities while maintaining rustic mountain charm. Perfect for your White Mountains escape!',
+    ],
+    images: [
+        {
+            src: '/booking-images/cottage-21.jpg',
+            alt: 'Cabin two in red clapboard with a white porch and hostas in bloom',
+        },
+        {
+            src: '/booking-images/cottage-07.jpg',
+            alt: 'Bed beside a gas stove in a pine-panelled cabin',
+        },
+        {
+            src: '/booking-images/cottage-14.jpg',
+            alt: 'Cabin kitchenette with a microwave, sink and coffee maker',
+        },
+        {
+            src: '/booking-images/cottage-16.jpg',
+            alt: 'Screened porch with a dining table for four',
+        },
+    ],
+    amenities: [
+        '10 Cabins in All',
+        'Kitchenette',
+        '3 Two Bedroom Cabins',
+        'Private Bathroom',
+        '7 One Room Cabins',
+        'Private Entrance',
+        'Free WiFi',
+        'Cable TV',
+        'Heating',
+    ],
+    facts: [
+        { value: '10', label: 'Cabins' },
+        { value: '3', label: 'Two bedroom' },
+        { value: '7', label: 'One room' },
+    ],
+};
+
+/**
+ * The House is not available to rent at the moment, so nothing on the site
+ * renders it. Its content is kept here rather than deleted so it can be put
+ * back in three steps:
+ *
+ *   1. render `<StaySection stay={house} reverse tone="light" />` in app/page.tsx
+ *   2. add `{ label: 'The House', href: '#house' }` back to `nav` above
+ *   3. put the house back into `hero.lede`, `hero.stats`, `about` and the
+ *      "Room for everyone" highlight, and into the metadata in app/layout.tsx
+ */
+export const house: Stay = {
+    id: 'house',
+    eyebrow: 'The house',
+    title: 'The House',
+    subtitle: 'Perfect for Large Groups & Families',
+    description: [
+        'Nestled in the White Mountains and closest to North Conway Village, our spacious family home is perfect for families and groups of all sizes. With 9 bedrooms and 5 bathrooms spread across three floors, everyone will have plenty of space to relax.',
+        'The ground floor features a full kitchen and two bedrooms with one bathroom. The second floor offers five bedrooms with three bathrooms, while the third floor has two bedrooms with one bathroom. Perfect for your White Mountains getaway!',
+    ],
+    images: [
+        {
+            src: '/booking-images/cottage-19.jpg',
+            alt: 'King bed with a writing desk and framed mirror',
+        },
+        {
+            src: '/booking-images/cottage-10.jpg',
+            alt: 'Sitting area with hardwood floors, a TV and a gas stove',
+        },
+        {
+            src: '/booking-images/cottage-18.jpg',
+            alt: 'Bedroom with a coffee maker, flat-screen TV and gas stove',
+        },
+        {
+            src: '/booking-images/cottage-13.jpg',
+            alt: 'Screened porch dining table looking out across the cabins',
+        },
+    ],
+    amenities: [
+        'Ground Floor: 2 Bedrooms, 1 Bathroom',
+        'Second Floor: 5 Bedrooms, 3 Bathrooms',
+        'Third Floor: 2 Bedrooms, 1 Bathroom',
+        'Full Kitchen',
+        'Multiple Living Areas',
+        'Mountain Views',
+        'Free WiFi',
+        'Cable TV',
+        'Heating',
+        'Ample Parking',
+    ],
+    facts: [
+        { value: '9', label: 'Bedrooms' },
+        { value: '5', label: 'Bathrooms' },
+        { value: '3', label: 'Floors' },
+    ],
+};
 
 export const galleryCategories = [
     'All',
@@ -476,4 +486,4 @@ export const policies = {
 };
 
 export const about =
-    'Experience the charm of the White Mountains in our cozy cabins and spacious family house. Perfect for families, couples, and groups seeking a memorable mountain getaway.';
+    'Experience the charm of the White Mountains in our cozy cabins. Perfect for families, couples, and groups seeking a memorable mountain getaway.';

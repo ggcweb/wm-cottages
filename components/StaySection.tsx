@@ -56,7 +56,11 @@ export default function StaySection({ stay, reverse = false, tone = 'light' }: S
                                     className={`relative aspect-[4/3] overflow-hidden rounded-xl bg-birch-200
                                                 transition-all duration-300 ease-smooth ${
                                                     i === active
-                                                        ? 'ring-2 ring-barn ring-offset-2 ring-offset-birch-50'
+                                                        ? `ring-2 ring-barn ring-offset-2 ${
+                                                              tone === 'warm'
+                                                                  ? 'ring-offset-birch-100'
+                                                                  : 'ring-offset-birch-50'
+                                                          }`
                                                         : 'opacity-65 hover:opacity-100'
                                                 }`}
                                 >
