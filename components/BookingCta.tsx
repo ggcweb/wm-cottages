@@ -26,7 +26,7 @@ export default function BookingCta() {
                         Your place in North Conway is waiting
                     </h2>
                     <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/80">
-                        Check the calendar, pick your cottage, and let yourself in when you arrive.
+                        Check the calendar, pick your cabin, and let yourself in when you arrive.
                     </p>
                 </Reveal>
 

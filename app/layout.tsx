@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://www.wmcottage.com'),
     title: 'White Mountain Cottages | North Conway, NH Vacation Rentals',
     description:
-        'Self check-in cottages and a nine-bedroom family house in the heart of North Conway, NH. Experience the beauty of the White Mountains — perfect for skiing, hiking, and family getaways.',
+        'Self check-in cabins and a nine-bedroom family house in the heart of North Conway, NH. Experience the beauty of the White Mountains — perfect for skiing, hiking, and family getaways.',
     keywords:
-        'White Mountain Cottages, North Conway rentals, NH vacation rentals, self check-in North Conway, skiing accommodations, family house rental, mountain cottages, New Hampshire lodging',
+        'White Mountain Cottages, North Conway rentals, NH vacation rentals, self check-in North Conway, skiing accommodations, family house rental, mountain cabins, North Conway cabin rentals, New Hampshire lodging',
     openGraph: {
         title: 'White Mountain Cottages | North Conway, NH',
         description:
-            'Cozy self check-in cottages and a spacious family house in the heart of North Conway. Your perfect White Mountains getaway.',
+            'Cozy self check-in cabins and a spacious family house in the heart of North Conway. Your perfect White Mountains getaway.',
         type: 'website',
         locale: 'en_US',
         siteName: 'White Mountain Cottages',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
                 url: '/booking-images/cottage-06.jpg',
                 width: 1149,
                 height: 900,
-                alt: 'Two of the red cottages at White Mountain Cottages, each with its own covered porch',
+                alt: 'Two of the red cabins at White Mountain Cottages, each with its own covered porch',
             },
         ],
     },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'White Mountain Cottages | North Conway, NH',
         description:
-            'Cozy self check-in cottages and a spacious family house in the heart of North Conway.',
+            'Cozy self check-in cabins and a spacious family house in the heart of North Conway.',
         images: ['/booking-images/cottage-06.jpg'],
     },
     icons: {

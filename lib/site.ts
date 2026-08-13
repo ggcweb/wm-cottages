@@ -1,9 +1,14 @@
 /**
  * Single source of truth for everything the site says.
  *
- * All property facts here are carried over unchanged from the previous site:
- * address, phone, email, booking link, room counts, amenities, policies and
- * the area guide. Edit copy here rather than in the components.
+ * Contact details, the House, the policies and the area guide are carried over
+ * unchanged from the previous site. The cabin counts were corrected by the
+ * owner: ten cabins, three of them two-bedroom and the remaining seven single
+ * room, each with a kitchenette and a private bathroom. The old "1 queen / 5
+ * king" split is deliberately gone — bed types are unconfirmed, so the site
+ * says nothing about them rather than guessing.
+ *
+ * Edit copy here rather than in the components.
  */
 
 export const BOOKING_URL =
@@ -26,7 +31,7 @@ export const contact = {
 };
 
 export const nav = [
-    { label: 'The Cottages', href: '#cottages' },
+    { label: 'The Cabins', href: '#cabins' },
     { label: 'The House', href: '#house' },
     { label: 'Self Check-In', href: '#check-in' },
     { label: 'Gallery', href: '#gallery' },
@@ -38,14 +43,14 @@ export const hero = {
     eyebrow: 'North Conway, New Hampshire',
     title: 'Stay in the heart of',
     titleAccent: 'North Conway',
-    lede: 'Experience the beauty of the White Mountains in our charming cottages and spacious family house.',
+    lede: 'Experience the beauty of the White Mountains in our charming cabins and spacious family house.',
     image: {
         src: '/booking-images/cottage-06.jpg',
-        alt: 'Two of the red cottages side by side, each with its own covered porch',
+        alt: 'Two of the red cabins side by side, each with its own covered porch',
     },
     stats: [
         { value: 'Self', label: 'Check-In' },
-        { value: '6', label: 'Cottages' },
+        { value: '10', label: 'Cabins' },
         { value: '9', label: 'Bedroom House' },
         { value: '4PM', label: 'Arrival' },
     ],
@@ -64,12 +69,12 @@ export const highlights = [
     },
     {
         title: 'Your own front door',
-        body: 'Every cottage has a private entrance and its own porch. Park a few steps away and carry your bags straight inside.',
+        body: 'Every cabin has a private entrance and its own porch. Park a few steps away and carry your bags straight inside.',
         icon: 'door' as const,
     },
     {
         title: 'Room for everyone',
-        body: 'Six two-bedroom cottages for couples and small families, plus a nine-bedroom house when the whole group comes along.',
+        body: 'Ten cabins — three with two bedrooms, the rest a single room — plus a nine-bedroom house when the whole group comes along.',
         icon: 'group' as const,
     },
 ];
@@ -82,7 +87,7 @@ export const checkIn = {
         {
             n: '01',
             title: 'Book online',
-            body: 'Pick your dates and your cottage through our reservation system and your confirmation comes back right away.',
+            body: 'Pick your dates and your cabin through our reservation system and your confirmation comes back right away.',
         },
         {
             n: '02',
@@ -102,7 +107,7 @@ export const checkIn = {
     footnote: 'Something you need on the way in? Give us a call at',
     image: {
         src: '/booking-images/cottage-09.jpg',
-        alt: 'Covered porch and private entrance of cottage nine',
+        alt: 'Covered porch and private entrance of cabin nine',
     },
 };
 
@@ -134,26 +139,26 @@ export interface Stay {
 
 export const stays: Stay[] = [
     {
-        id: 'cottages',
-        eyebrow: 'The cottages',
-        title: 'The Cottages',
+        id: 'cabins',
+        eyebrow: 'The cabins',
+        title: 'The Cabins',
         subtitle: 'Cozy & Comfortable',
         description: [
-            'We offer six charming cottages, each with two bedrooms, a kitchenette, and a private bathroom. These cozy retreats are perfect for couples or small families seeking comfort and privacy.',
-            'Choose from one queen cottage or five king cottages, each thoughtfully designed with modern amenities while maintaining rustic mountain charm. Perfect for your White Mountains escape!',
+            'We offer ten charming cabins, each with a kitchenette and a private bathroom. Three of them have two bedrooms, and the rest are comfortable single-room cabins. These cozy retreats are perfect for couples or small families seeking comfort and privacy.',
+            'Every cabin is thoughtfully designed with modern amenities while maintaining rustic mountain charm. Perfect for your White Mountains escape!',
         ],
         images: [
             {
                 src: '/booking-images/cottage-21.jpg',
-                alt: 'Cottage two in red clapboard with a white porch and hostas in bloom',
+                alt: 'Cabin two in red clapboard with a white porch and hostas in bloom',
             },
             {
                 src: '/booking-images/cottage-07.jpg',
-                alt: 'King bed beside a gas stove in a pine-panelled cottage',
+                alt: 'Bed beside a gas stove in a pine-panelled cabin',
             },
             {
                 src: '/booking-images/cottage-14.jpg',
-                alt: 'Cottage kitchenette with a microwave, sink and coffee maker',
+                alt: 'Cabin kitchenette with a microwave, sink and coffee maker',
             },
             {
                 src: '/booking-images/cottage-16.jpg',
@@ -161,19 +166,20 @@ export const stays: Stay[] = [
             },
         ],
         amenities: [
-            '4 Two Bedroom Cottages',
+            '10 Cabins in All',
+            'Kitchenette',
+            '3 Two Bedroom Cabins',
             'Private Bathroom',
-            '1 Queen Cottage',
-            'Cable TV',
-            '5 King Cottages',
-            'Free WiFi',
-            'Heating',
+            '7 One Room Cabins',
             'Private Entrance',
+            'Free WiFi',
+            'Cable TV',
+            'Heating',
         ],
         facts: [
-            { value: '6', label: 'Cottages' },
-            { value: '2', label: 'Bedrooms each' },
-            { value: '1', label: 'Private bath' },
+            { value: '10', label: 'Cabins' },
+            { value: '3', label: 'Two bedroom' },
+            { value: '7', label: 'One room' },
         ],
     },
     {
@@ -200,7 +206,7 @@ export const stays: Stay[] = [
             },
             {
                 src: '/booking-images/cottage-13.jpg',
-                alt: 'Screened porch dining table looking out across the cottages',
+                alt: 'Screened porch dining table looking out across the cabins',
             },
         ],
         amenities: [
@@ -248,34 +254,34 @@ export interface GalleryImage {
 export const gallery: GalleryImage[] = [
     {
         src: '/booking-images/cottage-06.jpg',
-        alt: 'Two red cottages side by side, each with its own covered porch',
+        alt: 'Two red cabins side by side, each with its own covered porch',
         category: 'Exteriors',
     },
     {
         src: '/booking-images/cottage-23.jpg',
-        alt: 'Cottage eight with window boxes and a white painted porch',
+        alt: 'Cabin eight with window boxes and a white painted porch',
         category: 'Exteriors',
     },
     {
         src: '/booking-images/cottage-09.jpg',
-        alt: 'Covered porch and private entrance of cottage nine',
+        alt: 'Covered porch and private entrance of cabin nine',
         category: 'Exteriors',
         tall: true,
     },
     {
         src: '/booking-images/cottage-21.jpg',
-        alt: 'Cottage two in red clapboard with hostas along the porch',
+        alt: 'Cabin two in red clapboard with hostas along the porch',
         category: 'Exteriors',
     },
     {
         src: '/booking-images/cottage-22.jpg',
-        alt: 'Cottage seven with a screened porch and a chair out front',
+        alt: 'Cabin seven with a screened porch and a chair out front',
         category: 'Exteriors',
         tall: true,
     },
     {
         src: '/booking-images/cottage-24.jpg',
-        alt: 'Cottage eight framed by the pines',
+        alt: 'Cabin eight framed by the pines',
         category: 'Exteriors',
     },
     {
@@ -285,7 +291,7 @@ export const gallery: GalleryImage[] = [
     },
     {
         src: '/booking-images/cottage-07.jpg',
-        alt: 'King bed beside a lit gas stove in a pine-panelled cottage',
+        alt: 'King bed beside a lit gas stove in a pine-panelled cabin',
         category: 'Rooms',
     },
     {
@@ -332,7 +338,7 @@ export const gallery: GalleryImage[] = [
     },
     {
         src: '/booking-images/cottage-13.jpg',
-        alt: 'Screened porch with a dining table looking out across the cottages',
+        alt: 'Screened porch with a dining table looking out across the cabins',
         category: 'Kitchens & Porches',
     },
     {
@@ -342,7 +348,7 @@ export const gallery: GalleryImage[] = [
     },
     {
         src: '/booking-images/cottage-03.jpg',
-        alt: 'Cottage bathroom with green wainscoting and a tiled surround',
+        alt: 'Cabin bathroom with green wainscoting and a tiled surround',
         category: 'Baths',
         tall: true,
     },
@@ -465,9 +471,9 @@ export const policies = {
     ],
     rules: [
         'Guests must be at least 21 years of age to make a reservation and to check in.',
-        'No smoking is allowed inside the cottages.',
+        'No smoking is allowed inside the cabins.',
     ],
 };
 
 export const about =
-    'Experience the charm of the White Mountains in our cozy cottages and spacious family house. Perfect for families, couples, and groups seeking a memorable mountain getaway.';
+    'Experience the charm of the White Mountains in our cozy cabins and spacious family house. Perfect for families, couples, and groups seeking a memorable mountain getaway.';

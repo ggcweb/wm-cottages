@@ -76,7 +76,7 @@ export default function Gallery() {
                         </h2>
                     </div>
                     <p className="max-w-sm text-sm leading-relaxed text-white/60">
-                        Every photograph here is of the actual property — the cottages, the rooms,
+                        Every photograph here is of the actual property — the cabins, the rooms,
                         the porches and the grounds in North Conway.
                     </p>
                 </Reveal>
