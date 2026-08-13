@@ -1,56 +1,92 @@
 import Image from 'next/image';
+import { BOOKING_URL, hero } from '@/lib/site';
+import { IconArrowRight, IconKey, IconPin } from '@/components/Icons';
 
 export default function Hero() {
     return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="/booking-images/cottage-01.jpg"
-                    alt="White Mountain Cottages scenic view"
-                    fill
-                    className="object-cover"
-                    priority
-                    quality={85}
-                />
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
+        <section className="relative flex min-h-[92svh] flex-col justify-end overflow-hidden bg-spruce-dark">
+            {/* Photograph */}
+            <div className="absolute inset-0">
+                <div className="relative h-full w-full animate-ken-burns">
+                    <Image
+                        src={hero.image.src}
+                        alt={hero.image.alt}
+                        fill
+                        className="object-cover object-center"
+                        priority
+                        quality={88}
+                        sizes="100vw"
+                    />
+                </div>
+                <div className="absolute inset-0 bg-scrim-b" />
+                <div className="absolute inset-0 bg-gradient-to-r from-spruce-dark/70 via-spruce-dark/25 to-transparent" />
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 text-center px-6 animate-fade-in">
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 animate-slide-up">
-                    Stay in the Heart of
-                    <br />
-                    <span className="text-cottage-red-light">North Conway</span>
-                </h1>
-                <p className="text-xl md:text-2xl text-earth-cream mb-8 max-w-2xl mx-auto animate-slide-up">
-                    Experience the beauty of the White Mountains in our charming cottages
-                    and spacious family house
-                </p>
-                <a
-                    href="https://reservation.asiwebres.com/SearchAvailability.aspx?id=92f48eca701144d9bcb5ec14f9a1629f"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-block text-lg animate-slide-up"
-                >
-                    Check Availability
-                </a>
+            {/* Copy */}
+            <div className="container relative z-10 pb-14 pt-36 sm:pb-16 md:pb-20 md:pt-40">
+                <div className="max-w-3xl">
+                    <p className="animate-hero-in flex items-center gap-2.5 text-white/85">
+                        <IconPin className="h-4 w-4 text-brass-light" />
+                        <span className="eyebrow">{hero.eyebrow}</span>
+                    </p>
+
+                    <h1
+                        className="animate-hero-in mt-5 text-[clamp(2.5rem,8vw,5.25rem)] font-semibold text-white"
+                        style={{ animationDelay: '80ms' }}
+                    >
+                        {hero.title}{' '}
+                        <span className="relative whitespace-nowrap italic text-brass-light">
+                            {hero.titleAccent}
+                        </span>
+                    </h1>
+
+                    <p
+                        className="animate-hero-in mt-6 max-w-xl text-lg leading-relaxed text-white/85 sm:text-xl"
+                        style={{ animationDelay: '160ms' }}
+                    >
+                        {hero.lede}
+                    </p>
+
+                    <div
+                        className="animate-hero-in mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+                        style={{ animationDelay: '240ms' }}
+                    >
+                        <a
+                            href={BOOKING_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-primary group"
+                        >
+                            Check Availability
+                            <IconArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </a>
+                        <a href="#check-in" className="btn-ghost-light">
+                            <IconKey className="h-4 w-4" />
+                            How self check-in works
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-                <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
+            {/* Facts rail */}
+            <div className="relative z-10 border-t border-white/15 bg-white/[0.07] backdrop-blur-md">
+                <div className="container">
+                    <dl className="grid grid-cols-4 divide-x divide-white/15">
+                        {hero.stats.map((stat) => (
+                            <div key={stat.label} className="px-2 py-5 text-center sm:px-4 md:py-6">
+                                <dt className="sr-only">{stat.label}</dt>
+                                <dd>
+                                    <span className="block font-display text-2xl font-semibold text-white md:text-3xl">
+                                        {stat.value}
+                                    </span>
+                                    <span className="eyebrow mt-1.5 block text-white/65">
+                                        {stat.label}
+                                    </span>
+                                </dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
             </div>
         </section>
     );
