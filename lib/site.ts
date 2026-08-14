@@ -19,7 +19,7 @@ export const BOOKING_URL =
 
 export const contact = {
     name: 'White Mountain Cottages',
-    street: '2689 White Mountain Highway',
+    street: '2406 White Mountain Highway',
     city: 'North Conway',
     state: 'NH',
     zip: '03860',
@@ -30,7 +30,7 @@ export const contact = {
     phoneHref: 'tel:603-356-6322',
     email: 'info@wmcottage.com',
     mapsUrl:
-        'https://www.google.com/maps/search/?api=1&query=2689+White+Mountain+Highway+North+Conway+NH+03860',
+        'https://www.google.com/maps/search/?api=1&query=2406+White+Mountain+Highway+North+Conway+NH+03860',
 };
 
 export const nav = [
@@ -116,7 +116,7 @@ export const location = {
     eyebrow: 'The location',
     title: 'As close to the village as it gets',
     body: [
-        'Our address is 2689 White Mountain Highway — the main street through North Conway. Village shops and restaurants sit just up the road, the outlets are a straight shot down it, and the highway runs on north into the notches and the trailheads.',
+        'Our address is 2406 White Mountain Highway — the main street through North Conway. Village shops and restaurants sit just up the road, the outlets are a straight shot down it, and the highway runs on north into the notches and the trailheads.',
         'Leave the car parked and walk into the evening, or be at a chairlift before the first ride of the day. Everything people come to the White Mountains for starts from here.',
     ],
     nearby: [
