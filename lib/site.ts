@@ -14,8 +14,9 @@
  * Edit copy here rather than in the components.
  */
 
+/** Direct booking runs on Kanha (the storefront for White Mountain Cottages). */
 export const BOOKING_URL =
-    'https://reservation.asiwebres.com/SearchAvailability.aspx?id=92f48eca701144d9bcb5ec14f9a1629f';
+    'https://gargreservations.com/stay/cmvcpa2il0003l008okd9qxze';
 
 export const contact = {
     name: 'White Mountain Cottages',
